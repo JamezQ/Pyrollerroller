@@ -17,8 +17,8 @@ def flip(flips):
 fliparray = []
 #Start flipping the coins range(x) amount of times at flip(x) amount of coins at
 #a time.
-for i in range(1000):
-    fliparray.append(flip(4))
+for i in range(1000000):
+    fliparray.append(flip(18))
     
 flipresult = []
 
@@ -63,7 +63,9 @@ resultitem.reverse()
 
 #Print out all the values
 for i in range(len(resultarray)):
-    resultpercent = str((resultarray[i]+0.0)/(results+0.0))[2:]
+    resultpercent = '%.12f' % ((resultarray[i]+0.0)/(results+0.0))
+    resultpercent = resultpercent.rstrip('0')
+    resultpercent = resultpercent[2:]
     if len(resultpercent) is 1:
         resultpercent += '0'
     if len(resultpercent) is 2:
